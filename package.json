@@ -1,0 +1,14 @@
+{
+  "name": "order-manager",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de pedidos para restaurante",
+  "scripts": {
+    "docker:up": "docker-compose up",
+    "docker:up:build": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "docker:down:volumes": "docker-compose down -v"
+  },
+  "keywords": ["nestjs", "react", "restaurant", "order-management"],
+  "author": "",
+  "license": "MIT"
+}
