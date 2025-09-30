@@ -103,7 +103,8 @@ describe('CriarPedidoPage', () => {
 
     await waitFor(() => {
       expect(screen.queryByText('Carrinho vazio')).not.toBeInTheDocument()
-      expect(screen.getByText('Pizza Margherita')).toBeInTheDocument()
+      expect(screen.getByText('Remover')).toBeInTheDocument()
+      expect(screen.getByText('Finalizar Pedido')).toBeInTheDocument()
     })
   })
 
