@@ -11,6 +11,7 @@ Sistema de gerenciamento de pedidos para restaurante com backend NestJS e fronte
 - Prisma ORM 6.x
 - PostgreSQL 17.x
 - Swagger/OpenAPI
+- Jest (testes)
 
 ### Frontend
 - React 18+
@@ -19,6 +20,7 @@ Sistema de gerenciamento de pedidos para restaurante com backend NestJS e fronte
 - TailwindCSS
 - React Router DOM
 - Axios
+- Vitest + React Testing Library (testes)
 
 ### Infraestrutura
 - Docker
@@ -195,6 +197,59 @@ order-manager/
 - `POST /pedidos` - Criar novo pedido
 - `PATCH /pedidos/:id/status` - Atualizar status do pedido
 
+## Testes
+
+### Backend
+
+O backend possui cobertura completa de testes unitários e de integração.
+
+#### Executar testes
+```bash
+cd backend
+npm test
+```
+
+#### Executar com cobertura
+```bash
+npm run test:cov
+```
+
+#### Executar em modo watch
+```bash
+npm run test:watch
+```
+
+#### Cobertura de testes
+- **PratosService**: Testes unitários para todas as operações CRUD
+- **PratosController**: Testes de integração para todos os endpoints
+- **PedidosService**: Testes unitários incluindo cálculo de totais e validações
+- **PedidosController**: Testes de integração para criação e listagem de pedidos
+
+### Frontend
+
+O frontend possui testes completos para todos os componentes principais.
+
+#### Executar testes
+```bash
+cd frontend
+npm test
+```
+
+#### Executar com cobertura
+```bash
+npm run test:coverage
+```
+
+#### Executar com UI
+```bash
+npm run test:ui
+```
+
+#### Cobertura de testes
+- **PratosPage**: Testes para CRUD completo de pratos
+- **CriarPedidoPage**: Testes para carrinho e criação de pedidos
+- **PedidosPage**: Testes para listagem, filtros e atualização de status
+
 ## Desenvolvimento
 
 O projeto segue as melhores práticas de desenvolvimento:
@@ -206,6 +261,8 @@ O projeto segue as melhores práticas de desenvolvimento:
 - Validação de dados
 - Commits granulares e semânticos
 - Documentação OpenAPI/Swagger
+- Cobertura completa de testes (unitários e integração)
+- TDD (Test-Driven Development)
 
 ## Licença
 
