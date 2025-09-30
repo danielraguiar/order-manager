@@ -138,8 +138,9 @@ function PratosPage() {
             </h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label className="block text-gray-700 font-medium mb-2">Nome</label>
+                <label htmlFor="prato-nome" className="block text-gray-700 font-medium mb-2">Nome</label>
                 <input
+                  id="prato-nome"
                   type="text"
                   value={formData.nome}
                   onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
@@ -148,8 +149,9 @@ function PratosPage() {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700 font-medium mb-2">Descrição</label>
+                <label htmlFor="prato-descricao" className="block text-gray-700 font-medium mb-2">Descrição</label>
                 <textarea
+                  id="prato-descricao"
                   value={formData.descricao}
                   onChange={(e) => setFormData({ ...formData, descricao: e.target.value })}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -158,8 +160,9 @@ function PratosPage() {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700 font-medium mb-2">Preço</label>
+                <label htmlFor="prato-preco" className="block text-gray-700 font-medium mb-2">Preço</label>
                 <input
+                  id="prato-preco"
                   type="number"
                   step="0.01"
                   value={formData.preco}
@@ -169,8 +172,9 @@ function PratosPage() {
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-gray-700 font-medium mb-2">Categoria</label>
+                <label htmlFor="prato-categoria" className="block text-gray-700 font-medium mb-2">Categoria</label>
                 <input
+                  id="prato-categoria"
                   type="text"
                   value={formData.categoria}
                   onChange={(e) => setFormData({ ...formData, categoria: e.target.value })}
