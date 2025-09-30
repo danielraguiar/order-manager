@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Prato {
+  id         String   @id @default(uuid())
+  nome       String
+  descricao  String
+  preco      Decimal  @db.Decimal(10, 2)
+  categoria  String
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  pedidoPratos PedidoPrato[]
+
+  @@map("pratos")
+}
+
+model Pedido {
+  id         String        @id @default(uuid())
+  valorTotal Decimal       @db.Decimal(10, 2) @map("valor_total")
+  status     StatusPedido  @default(RECEBIDO)
+  createdAt  DateTime      @default(now()) @map("created_at")
+  updatedAt  DateTime      @updatedAt @map("updated_at")
+
+  pedidoPratos PedidoPrato[]
+
+  @@map("pedidos")
+}
+
+model PedidoPrato {
+  id         String   @id @default(uuid())
+  pedidoId   String   @map("pedido_id")
+  pratoId    String   @map("prato_id")
+  quantidade Int
+  precoUnit  Decimal  @db.Decimal(10, 2) @map("preco_unit")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  pedido Pedido @relation(fields: [pedidoId], references: [id], onDelete: Cascade)
+  prato  Prato  @relation(fields: [pratoId], references: [id], onDelete: Restrict)
+
+  @@map("pedido_pratos")
+}
+
+enum StatusPedido {
+  RECEBIDO
+  EM_PREPARO
+  PRONTO
+  ENTREGUE
+}
