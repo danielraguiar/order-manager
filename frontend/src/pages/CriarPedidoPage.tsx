@@ -99,8 +99,9 @@ function CriarPedidoPage() {
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Novo Pedido</h1>
 
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Filtrar por categoria</label>
+          <label htmlFor="filtro-categoria" className="block text-gray-700 font-medium mb-2">Filtrar por categoria</label>
           <select
+            id="filtro-categoria"
             value={categoriaFiltro}
             onChange={(e) => setCategoriaFiltro(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

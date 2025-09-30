@@ -54,8 +54,9 @@ function PedidosPage() {
       </div>
 
       <div className="mb-6">
-        <label className="block text-gray-700 font-medium mb-2">Filtrar por status</label>
+        <label htmlFor="filtro-status" className="block text-gray-700 font-medium mb-2">Filtrar por status</label>
         <select
+          id="filtro-status"
           value={filtroStatus}
           onChange={(e) => setFiltroStatus(e.target.value)}
           className="w-full md:w-64 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
